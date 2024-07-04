@@ -1,0 +1,21 @@
+Create account and sign into:
+https://cloud.digitalocean.com/login
+
+Create Droplet: 
+OS: Ubuntu 22.04 LTS
+Intel 
+RAM: 8Gb +
+SSD: 50GB +
+Host: Wazuh
+Use password manager to save host credentials
+
+SSH into Wazuh using Putty or Powershell 
+Install Wazuh 4.7
+curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+After installation, save the admin credentials in password manager
+
+Connect to Wazuh Dashboard
+Use public IP assigned to Wazuh
+BitWarden Crednentials
+
+sudo tar -xvf wazuh-install-files.tar
