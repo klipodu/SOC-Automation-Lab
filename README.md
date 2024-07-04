@@ -23,8 +23,10 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 
 ![Image Alt](https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Workflow.png?raw=true)
 
-### Setup Wazuh
+### Install
+Install the components to set up in the cloud
+- Windows 10 w/Sysmon
+- Wazuh Server
+- TheHive Server
 
-### Setup Firewall
 
-### Setup TheHive
