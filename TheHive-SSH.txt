@@ -1,0 +1,56 @@
+SSH into TheHive
+
+--------------------------------------------
+- Update Cassandra settings
+- Crtl + W (to search)
+--------------------------------------------
+nano /etc/cassandra/cassandra.yaml
+
+cluster_name = klipodu
+listen_address = TheHive public IP
+rpc_address = TheHive public IP
+seed_provider > seeds = TheHive public IP
+
+Ctrl = X then Ctrl + Y to Save and ENTER to close
+
+--------------------------------------------
+- Cassandra was installed using a package
+- stop Cassandra service
+- remove the old files
+- restart Cassandra service
+- confirm service restarted
+--------------------------------------------
+systemctl stop cassandra.service
+rm -rf /var/lib/Cassandra/*
+systemctl start cassandra.service
+systemctl status cassandra.service
+# IF status =  active (exited)
+    systemctl restart cassandra.service
+#
+
+--------------------------------------------
+- Setup Elastic Search
+- Crtl + W (to search)
+--------------------------------------------
+nano /etc/elasticsearch/elasticsearch.yml
+
+cluster.name = (cluster_name above) from Cassandra
+remove comment for node.name = node-1
+network.host = TheHive public IP
+remove comment for http.port: 9200
+remove comment for cluster.initial_master_nodes and remove "node-2"
+Ctrl = X then Ctrl + Y to Save and ENTER to close
+systemctl start elasticsearch
+systemctl enable elasticsearch
+
+ls -la /opt/thp
+chown -R thehive:thehive /opt/thp
+nano /etc/thehive/application.conf
+db.janusgraph > hostname = TheHive public IP
+db.janusgraph > cluster-name = klipodu (set from cassandra cluster.name)
+db.janusgraph > index.search > hostname = TheHive public IP
+application.baseUrl = TheHive public IP
+systemctl start thehive
+systemctl enable thehive
+
+
