@@ -21,5 +21,4 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 
 ## Overview
 
-
-*Ref 1: Network Diagram*
+![Image Alt](https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Workflow.png?raw=true)
