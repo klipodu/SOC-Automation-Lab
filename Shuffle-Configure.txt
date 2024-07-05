@@ -12,14 +12,14 @@ Enter a description or leave blank
 Usecases: select anything
 Click Done
 
-{Shuffle-Webhook}
+{5.1}
 In the left pane, click 'Triggers' at the bottom
 Select 'Webhook' then drag/drop onto right pane
 Click the Webhook to open it's properties on right-pane
 Name: Wazuh-Alerts
 Parameters - copy it - this will be added into the Wazuh Manager
 
-{Shuffle-ChangeMe}
+{5.2}
 Click the 'Change Me' icon
 Find Actions: Repeat back to me
 Call: $exec (click the plus button, then Execution Argument)
@@ -27,7 +27,7 @@ Call: $exec (click the plus button, then Execution Argument)
 # SSH into Wazuh
 nano /var/ossec/etc/ossec.conf
 
-{Shuffle-Webhook-URL}
+{5.3}
 # Scroll below the <global> tag
 # Paste the <integration> tag
 # <integration> tag is found in Wazuh documentation
@@ -59,7 +59,7 @@ Spin up the Windows 10 VM
 Open PowerShell
 Run mimiktaz to regenerate telemetry 
 
-{Shuffle-Webhook-Execution}
+{5.4}
 Return to Shuffle
 Click the Webhook then 'START' (from it's properties pane)
 You'll see new events
@@ -71,30 +71,30 @@ Mimikatz is run from the Windows 10 VM
 
 
 2. Shuffle Receives Mimikatz Alert 
-Shuffle Webhook is created to capture the trigger {Shuffle-Webhook}
-SSH into Wazuh, modify ossec.conf to integrate Shuffle URL {Shuffle-Webhook-URL}
+Shuffle Webhook is created to capture the trigger {5.5}
+SSH into Wazuh, modify ossec.conf to integrate Shuffle URL {5.6}
 
 
 3. Check Reputation Score with VirusTotal
-Open a Webhook trigger to get hash {Shuffle-Webhook-Hash}
-Parse the hash using Regex {Shuffle-Regex}
+Open a Webhook trigger to get hash {5.7}
+Parse the hash using Regex {5.8}
 Create an account with VirusTotal
 Add VirusTotal app into Shuffle
-VirusTotal workflow will search the has from RegEx {Shuffle-VirusTotal}
-You can then check the score on VirusTotal web for case management {Shuffle-VirusTotal-Web}
+VirusTotal workflow will search the has from RegEx {5.9}
+You can then check the score on VirusTotal web for case management {5.10}
 
 
 4. Send Details to TheHive to Create Alert
-Log into TheHive web and create two accounts {TheHive-User-Accounts}
+Log into TheHive web and create two accounts {5.11}
   - AnyName@test.com  used to create a new organization outside of "admin"
   - shuffle@test.com  service account set with API key for Shuffle
 Add theHive app into Shuffle and authenticate it with the service account API
 TheHive app will send alerts to TheHive web on port 9000
-Update the cloud Firewall to allow inbound on port 9000 {Firewall-Rules-TheHive}
-TheHive cloud now receives alert {TheHive-Alert}	
+Update the cloud Firewall to allow inbound on port 9000 {5.12}
+TheHive cloud now receives alert {5.13}	
 
 
 5. Send an Email to SOC Analyst to being Investigation
 Add Email app into Shuffle and link to VirusTotal
-Configure the Email app to send to a recipient with details {SquareX-Email}
+Configure the Email app to send to a recipient with details {5.14}
 
