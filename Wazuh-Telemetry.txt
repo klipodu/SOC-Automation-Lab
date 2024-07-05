@@ -19,7 +19,7 @@ Make a copy of that tag
 We're going to update the copy tag to ingest Sysmon logs
 First we need to find Sysmon's channel name.
 
-{img 1}
+{image 4.1}
 To find Sysmon channel name, open Event Viewer
 Navigate to: 
 Applications and Services>Microsoft>Windows>Sysmon
@@ -28,7 +28,7 @@ Under the General tab
 Copy the Full Name (Microsoft-Windows-Sysmon/Operational)
 Paste into the <Location> tag we copied
 
-{img 2}
+{image 4.2}
 It should look like this:
 <localfile>
    <location>Microsoft-Windows-Sysmon/Operational</location>
@@ -38,7 +38,7 @@ It should look like this:
 Open Services.msc
 Restart wazuh service
 
-{img 3}
+{image 4.3}
 Log into Wazuh web
 From the homepage, click Security events
 Click Events (next to Dashboard)
@@ -60,7 +60,7 @@ Scroll down to Exclusions, click Add or remove exclusions
 Click Add an exclusion > Folder
 Select Downloads folder
 
-{img 4}
+{image 4.4}
 Download mimikatz_trunk.zip (on Windows VM)
 https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20220919
 Extract All
@@ -98,7 +98,7 @@ cd /var/ossec/logs/archvies
 ls
 You'll see the (2) files created where logs will be placed
 
-{img 5}
+{image 4.5}
 Now we want wazuh to start ingesting these log files
 nano /etc/filebeat/filebeat.yml
 Scroll down to filebeat.modules
@@ -143,7 +143,7 @@ Click the down-arrow next to 'Modules' at top
 Click Management > Rules
 Click 'Manage Rule Files'
 
-{img 6}
+{image 4.6}
 Our interest is eventID 1, so try search for Sysmon
 There's a rule called 0800-sysmon_id_1.xml
 Click the eye icon to view the rule
@@ -175,7 +175,7 @@ Set level to 15 (for fun)
 field_name="win.eventdata.originalFileName"
 the field_name value is case-sensitive
 
-{img 7}
+{image 4.7}
 type="pcre2">(?i)mimikatz\.exe
 remove the <options> tag
 Description is "Mimikatz Usage Detected"
@@ -192,6 +192,6 @@ Open PowerShell
 Change directory to mimiktaz
 Run the "renamed" mimikatz file
 
-{img 8}
+{image 4.8}
 Refresh the Wazuh events
 You should now see the custom rule trigger 
