@@ -106,3 +106,7 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 
 
 
+-----------------------------------------
+### Genereate telemetry that is related to Mimikatz on our endpoint which will then trigger an alert on Wazuh
+-----------------------------------------
+
