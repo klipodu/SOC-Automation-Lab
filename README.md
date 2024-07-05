@@ -63,7 +63,24 @@ Install the components to set up in the cloud
 -----------------------------------------
 ### Configure
 -----------------------------------------
-TheHive
+
+[TheHive](https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure.txt)
+
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Cassandra.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Cassandra.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-ElasticSearch.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-ElasticSearch.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Permissions.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Permissions.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Login.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Login.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
 
 
 
