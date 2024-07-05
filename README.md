@@ -23,8 +23,9 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 
 <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Workflow.png?raw=true" alt="Image Alt" width="741" height="525">
 
-
+-----------------------------------------
 ### Install
+-----------------------------------------
 Install the components to set up in the cloud
 - [Windows 10 w/Sysmon](https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Install.txt)
 
@@ -58,4 +59,15 @@ Install the components to set up in the cloud
   <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-SSH.png?raw=true">
     <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-SSH.png?raw=true" alt="Image Alt" width="200" height="100">
   </a>
+
+-----------------------------------------
+### Configure
+-----------------------------------------
+TheHive
+
+
+
+
+
+
 
