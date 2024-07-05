@@ -1,0 +1,166 @@
+##########################################################
+# SSH into TheHive
+# We will update Cassandra, elasticsearch, theHive
+##########################################################
+
+
+##########################################################
+# Update cassandra config file
+##########################################################
+nano /etc/cassandra/cassandra.yaml
+
+# Search for the fields by pressing Ctrl + W
+cluster_name: leave default or change to another name
+listen_address:  [TheHive public IP]
+rpc_address: [TheHive public IP]
+
+# Search for seed_provider then update the 'seed'
+seed:"[TheHive public IP]:7000"
+
+#To Save
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+
+# Whenever you update a config file, restart the service
+systemctl stop cassandra.service
+
+# Cassandra was installed using a package and the old files must be removed
+rm -rf /var/lib/cassandra/*
+
+
+# Start the Cassandra service
+systemctl start cassandra
+
+# Confirm the service is running
+systemctl status cassandra
+
+# After running the command, the last line will prompt the word (END)
+# Press letter Q to exit the (END)
+clear
+
+##########################################################
+# Update elasticsearch config file
+##########################################################
+nano /etc/elasticsearch/elasticsearch.yml
+
+# Scroll down and un-comment "cluster.name"
+cluster.name: thehive
+
+# Scroll down to "node.name"
+node.name: node-1
+
+
+# Scroll down to "network.host"
+network.host: [TheHive public IP]
+
+# Scroll down to "http.port"
+http.port: 9200
+
+
+# Scroll down to "cluster.initial_master_nodes"
+cluster.initial_master_nodes: ["node-1"]
+
+#To Save
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+
+# Start the elasticsearch service and confirm running
+systemctl start elasticsearch
+systemctl enable elasticsearch
+systemctl status elasticsearch
+
+# After running the command, the last line will prompt the word (END)
+# Press letter Q to exit the (END)
+
+clear
+
+##########################################################
+# Update thehive config file
+##########################################################
+
+# Update thehive permissions on path
+ls -la /opt/thp
+
+# By default, only 'root' has access to directory "thehive"
+chown -R thehive:thehive /opt/thp
+
+# Location of thehive config file
+nano /etc/thehive/application.conf
+
+# Scroll down to db.janusgraph
+hostname = ["TheHive public IP"]
+cluster-name = use the "cluster_name" set in cassandra above
+
+# Scroll down to index.search
+hostname = ["TheHive public IP"]
+
+# Scorll down to application.baseUrl
+application.baseUrl = "http://[TheHive public IP]:9000"
+
+#To Save
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+
+# Start thehive and confirm running
+systemctl start thehive
+systemctl enable thehive
+systemctl status thehive
+
+# After running the command, the last line will prompt the word (END)
+# Press letter Q to exit the (END)
+
+clear
+
+
+# If you're unable to access thehive web, double-check all services are running
+# cassandra, elasticsearch, thehive
+# All three must be running
+# If a service is "active (exited), use command systemctl restart [servicename]
+
+# Log into thehive web portal
+# https://[TheHive public IP]:9000
+# Default credentials are 'admin@thehive.local' with a default password of 'secret'
+# Change password once logged in
+
+# If default authentication fails
+# elasticsearch may be down, restart service and try again
+systemctl status elasticsearch
+
+# If still unable to login using default credentials, open java options
+nano /etc/elasticsearch/jvm.options.d/jvm.options
+
+# Reduce RAM that Java uses
+# !! Do this only if "default" credentials still won't work !!
+# Copy/paste
+-Dlog4j2.formatMsgNoLookups=true
+-Xms2g
+-Xmx2g
+
+#To Save
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+
+# Restart elasticsearch service
+systemctl restart elasticsearch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
