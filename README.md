@@ -157,3 +157,9 @@ img 8
 ### Connect Shuffler (SOAR)
 -----------------------------------------
 
+Shuffler
+
+Send alert to TheHive
+
+Send to SOC Analyst via Email
+
