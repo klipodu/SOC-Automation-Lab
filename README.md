@@ -204,4 +204,7 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
               </a>
 </div>
 <br>
+  5.15 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Shuffle-Workflow.png?raw=true">
+          <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Shuffle-Workflow.png?raw=true" alt="Image Alt" width="200" height="100">
+      </a>
 
