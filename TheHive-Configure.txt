@@ -23,7 +23,7 @@ ctrl + y for Yes
 Enter to save
 
 # Whenever you update a config file, restart the service
-systemctl stop cassandra.service
+systemctl restart cassandra.service
 
 # Cassandra was installed using a package and the old files must be removed
 rm -rf /var/lib/cassandra/*
