@@ -36,7 +36,7 @@ Install the components to set up in the cloud
 
   VitrualBox is now setup <br>
   <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true" alt="Image Alt" width="732" height="540">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true" alt="Image Alt" width="200" height="100">
   </a>
 
 - [Wazuh Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Install.txt)
