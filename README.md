@@ -21,7 +21,8 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 
 ## Overview
 
-![Image Alt](https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Workflow.png?raw=true)
+<img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Workflow.png?raw=true" alt="Image Alt" width="741" height="525">
+
 
 ### Install
 Install the components to set up in the cloud
