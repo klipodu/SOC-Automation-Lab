@@ -50,4 +50,10 @@ sudo apt-get update
 sudo apt-get install -y thehive
 
 Default Credentials on port 9000
-credentials are 'admin@thehive.local' with a password of 'secret'
+credentials are 'admin@thehive.local' with a default password of 'secret'
+Change password once logged in
+
+Confirm all services are running
+systemctl status cassandra.service
+systemctl status elasticsearch.service
+systemctl status thehive.service
