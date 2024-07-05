@@ -1,0 +1,16 @@
+Create Digital Ocean to create scalable virtual machines
+https://cloud.digitalocean.com/login
+Fee trial account for 60 days
+
+Left pane navigation, select 'Networking'
+Right pane, select 'Firewalls'
+'Create Firewall'
+Name: Firewall
+Inbound Rules:
+Type    	Protocol	PortRange	Sources
+ICMP		ICMP				Your ISP public IP
+ALL TCP		TCP		All ports	Your ISP public IP
+SSH		TCP		22		Your ISP public IP
+All UDP		UDP		All ports	Your ISP public IP
+Custom		TCP		9000		All IPv4
+

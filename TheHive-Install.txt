@@ -57,3 +57,4 @@ Confirm all services are running
 systemctl status cassandra.service
 systemctl status elasticsearch.service
 systemctl status thehive.service
+

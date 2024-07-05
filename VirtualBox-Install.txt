@@ -1,0 +1,45 @@
+Install VirtualBox
+https://www.virtualbox.org/wiki/Downloads
+
+Platform package: Windows hosts
+While installing, check the SHA256 checksums
+Open Powershell and change directory to Downloads folder
+Get-FileHash .\VirtualBox-7.0.18-162988-Win.exe
+Confirm hash for integrity
+Install VirtualBox
+
+Create Windows 10 installation media (ISO)
+https://www.microsoft.com/en-us/software-download/windows10
+
+
+Open VirtualBox
+Select New
+Name: Windows 10
+ISO Image: Windows.iso
+Skip unattended Installation: Checkbox selected
+Base Memory: 4GB
+CPU: 1
+Disk size: 50GB
+Startup Windows10
+Complete the Windows10 setup
+Use Custom Install Windows only (advanced)
+
+**********************************************************
+All instructions below are done on the Windows10 VM
+**********************************************************
+
+We need Sysmon for telemetry
+
+Download and install Sysmon v15.14
+https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
+
+Download Raw File SysmonConfig.xml from GitHub
+https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml
+
+Extract Sysmon
+Move Sysmonconfig.xml into extracted folder
+Open PowerShell as admin
+Change directory to extracted Sysmon
+Command .\sysmon64.exe -i sysmonconfig.xml
+Confirm Sysmon service is running
+

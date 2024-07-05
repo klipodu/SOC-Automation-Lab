@@ -28,3 +28,7 @@ Open PowerShell as admin
 Paste command from step 4 above
 After complete, run command NET START WazuhSvc
 Return to dashboard and confirm agent
+
+
+
+
