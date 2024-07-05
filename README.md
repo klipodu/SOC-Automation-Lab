@@ -40,6 +40,18 @@ Install the components to set up in the cloud
   </a>
 
 - [Wazuh Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Install.txt)
+
+  SSH into Wazuh Server<br>
+  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-SSH.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-SSH.png?raw=true" alt="Image Alt" width="200" height="100">
+  </a>   
+
+  Wazuh Homepage<br>
+  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard-Home.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard-Home.png?raw=true" alt="Image Alt" width="200" height="100">
+  </a>
+
+  
 - [TheHive Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Install.txt)
 
 
