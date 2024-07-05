@@ -144,12 +144,12 @@ img 6
 
 img 7
 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rule.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rulez.png?raw=true" alt="Image Alt" width="200" height="100">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rule.png?raw=true" alt="Image Alt" width="200" height="100">
 </a>
 
 img 8
 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rule-Trigger.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Wazuh-Telemetry-Custom-Rule-Trigger.png?raw=true" alt="Image Alt" width="200" height="100">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rule-Trigger.png?raw=true" alt="Image Alt" width="200" height="100">
 </a>
 
 
