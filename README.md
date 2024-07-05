@@ -83,8 +83,23 @@ Install the components to set up in the cloud
 </a>
 
 
+[Wazuh](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Configure.txt)
 
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Configure-Login.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Configure-Login.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
 
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Add-Agent.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Add-Agent.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard-Home.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard-Home.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
 
 
 
