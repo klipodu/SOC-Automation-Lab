@@ -28,12 +28,16 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 Install the components to set up in the cloud
 - [Windows 10 w/Sysmon](https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Install.txt)
 
-  After downloading VirtualBox, check the hash using PowerShell
-  <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Hash-Check.png?raw=true" alt="Image Alt" width="992" height="264">
+  After downloading VirtualBox, check the hash using PowerShell <br>
+  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Hash-Check.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Hash-Check.png?raw=true" alt="Image Alt" width="200" height="100">
+  </a>
+
 
   VitrualBox is now setup <br>
-   <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true" alt="Image Alt" width="732" height="540">
-  
+  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true" alt="Image Alt" width="732" height="540">
+  </a>
 
 - [Wazuh Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Install.txt)
 - [TheHive Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Install.txt)
