@@ -1,0 +1,226 @@
+Spin up Windows 10 VM
+
+Open File Explorer
+Navigate to C:\Program Files (x86)\ossec-agent
+Make a copy of ossec.conf and rename it ossec-backup.com
+
+
+Launch NotePad as admin
+In NotePad, Open C:\Program Files (x86)\ossec-agent\ossec.conf
+
+
+Scroll down to <!-- Log analysis -->
+This section is sent to Wazuh manager
+For this project, we'll only send two locations
+
+Delete all the <localfile> tags except "active-response\active-responses.log"
+Make a copy of that tag
+
+We're going to update the copy tag to ingest Sysmon logs
+First we need to find Sysmon's channel name.
+
+To find Sysmon channel name, open Event Viewer
+Navigate to: 
+Applications and Services>Microsoft>Windows>Sysmon
+Right-click 'Operational' > Properties
+Under the General tab
+Copy the Full Name (Microsoft-Windows-Sysmon/Operational)
+Paste into the <Location> tag we copied
+
+It should look like this:
+<localfile>
+   <location>Microsoft-Windows-Sysmon/Operational</location>
+   <log_format>eventchannel</log_format>
+</localfile>
+
+Open Services.msc
+Restart wazuh service
+
+Log into Wazuh web
+From the homepage, click Security events
+Click Events (next to Dashboard)
+On the left-pane, ensure the index is set to 'wazuh-alerts-*'
+Search for Sysmon (in the textbox that has DQL)
+There may be no events
+
+Next we want to download and install Mimikatz on the Windows 10 VM
+Mimikatz is an application that attackers and red team uses to extract credentials from
+your machines
+
+Windows Security will try to block the download
+Before downloading Mimikatz, we must update Defender
+
+Open Windows Security (on Windows VM)
+Click Virus & threat protection
+Scroll to Virus & threat protection settings, then click Manage settings
+Scroll down to Exclusions, click Add or remove exclusions
+Click Add an exclusion > Folder
+Select Downloads folder
+
+Download mimikatz_trunk.zip (on Windows VM)
+https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20220919
+Extract All
+Run PowerShell as admin
+Change PS directory to the mimiktaz_trunk\x64 folder
+IE: "C:\Users\(your profile)\Downloads\mimikatz_trunk\x64"
+Run .\mimikatz.exe
+
+Return to Wazuh Dashboard > Events
+Search for mimitaz
+No events found probably because Sysmon didn't trigger any alert
+Also, default Wazuh does not log everything
+We must update the wazuh config file
+
+SSH into Wazuh
+First make a backup of the file
+cp /var/ossec/etc/ossec.conf ~/ossec-backup.conf
+
+
+Edit the conf file
+nano /var/ossec/etc/ossec.conf
+
+Scroll down to logall
+change to: <logall>yes</logall>
+change to: <logall_json>yes</logall_json>
+
+Save the conf file
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+
+systemctl restart wazuh-manager.service
+This forces Wazuh to begin archiving all the logs and put them into a file called Archives 
+cd /var/ossec/logs/archvies
+ls
+You'll see the (2) files created where logs will be placed
+
+Now we want wazuh to start ingesting these log files
+nano /etc/filebeat/filebeat.yml
+Scroll down to filebeat.modules
+Set archives:enabled: true
+Save the conf file
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+# Whenever you update a config file, restart the service
+systemctl restart filebeat.service
+
+
+Return to Wazuh Dashboard 
+Select Menu from top-left
+Click Stack Management>Index patterns
+
+There are three default indexes: alerts, monitoring, statistics
+Create an index for Archives so we can search all the logs
+Top-right, click Create index pattern
+Index pattern name: wazuh-archives-**
+Click next
+Time field: timestamp
+Click Create Index Pattern
+
+Select Menu from top-left
+Click Discover
+Change index pattern to wazuh-archives
+Search for mimikatz
+There's probably 2 alerts (this is good!)
+
+We are interested in event ID 1 because this will show us process Creations 
+Open the alert that has eventID : 1
+Notice [data.win.eventdata.originalFileName]
+We will use this field to craft our alert because if we were to use a field
+such as [data.win.eventdata.image] an attacker could simply rename mimikcatz to mimikcow 
+and the alert would have been bypassed. However with the original file name regardless of the name change to mimikcow we should still be able to see it and the alert should trigger
+
+
+Wazuh has some built-in rules that we can use  
+Click the Home button
+Click the down-arrow next to 'Modules' at top
+Click Management > Rules
+Click 'Manage Rule Files'
+
+Our interest is eventID 1, so try search for Sysmon
+There's a rule called 0800-sysmon_id_1.xml
+Click the eye icon to view the rule
+These rules are built into Wazuh
+Copy any rule so we can add it as a custom rule
+IE: 
+<rule id="92000" level="4">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.parentImage" type="pcre2">(?i)\\(c|w)script\.exe</field>
+    <options>no_full_log</options>
+    <description>Scripting interpreter spawned a new process</description>
+    <mitre>
+      <id>T1059.005</id>
+    </mitre>
+</rule>
+
+Exit rule view to return to the main rules
+Click the 'Custom Rules' button
+Edit the local_rules.xml
+Paste the rule below the top rule
+Correct any indentation to match the top rule
+
+Time to modify the rule
+Custom rule IDs begin at 100001
+So set the new rule_id to 100002
+level is the severity that ranges from 1 to 15
+Set level to 15 (for fun)
+
+field_name="win.eventdata.originalFileName"
+the field_name value is case-sensitive
+
+type="pcre2">(?i)mimikatz\.exe
+
+remove the <options> tag
+Description is "Mimikatz Usage Detected"
+ID is T1003 aka credential dumping
+click Save which will restart the Manager
+
+
+To see how the [win.eventdata.originalFileName] works,
+return to the Windows VM
+navigate to the extracted mimikatz folder
+rename mimiktaz.exe to something else
+
+Open PowerShell
+Change directory to mimiktaz
+Run the "renamed" mimikatz file
+
+Refresh the Wazuh events
+You should now see the custom rule trigger 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
