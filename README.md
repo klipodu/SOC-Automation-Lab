@@ -1,17 +1,17 @@
 # SOC-Automation-Lab
 
 ## Objective
-The SOC Automation Lab project explores how automation enhances incident response, accelerates threat detection, and streamlines SOC workflows.
-Focus is to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. 
-This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shuffle, and theHive.
+The primary objective of this SOC home lab is to provide oneself with a hands-on experience in setting up, configuring, and operating a Security Operations Center in a simulated environment.
+I was inspired by myDFIR found [here](https://www.youtube.com/watch?v=XR3eamn8ydQ&ab_channel=MyDFIR)
 
 ### Skills Learned
 
 - Home lab using virtualization
-- Responsive capabilites
+- Incident Response Training
 - Case management and reporting
 - Automation
-- Incident response
+- Integration Testing
+- Threat Intelligence Enrichment
   
 ### Tools Used
 
@@ -22,7 +22,7 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 
 ## Overview
 
-<img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Workflow.png?raw=true" alt="Image Alt" width="741" height="525">
+<img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Wrokflow.png?raw=true" alt="Image Alt">
 
 -----------------------------------------
 ### Install the components to set up in the cloud
