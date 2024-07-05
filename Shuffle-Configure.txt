@@ -98,3 +98,5 @@ TheHive cloud now receives alert {5.13}
 Add Email app into Shuffle and link to VirusTotal
 Configure the Email app to send to a recipient with details {5.14}
 
+Final Shuffle Workflow {5.15}
+
