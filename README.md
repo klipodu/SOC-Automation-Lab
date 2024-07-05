@@ -18,6 +18,7 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 - Wazuh, Security Information and Event Management (SIEM) system for log ingestion and analysis.
 - Shuffle, Security Orchestration Automation and Response (SOAR).
 - theHive, Case management and Incident reporting
+- VirtiualBox
 
 ## Overview
 
