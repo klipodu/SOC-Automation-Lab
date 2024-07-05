@@ -122,7 +122,10 @@ clear
 
 # Log into thehive web portal
 # https://[TheHive public IP]:9000
-# Default credentials are 'admin@thehive.local' with a default password of 'secret'
+
+# Default credentials
+# u: admin@thehive.local
+# p: secret
 # Change password once logged in
 
 # If default authentication fails
