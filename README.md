@@ -154,10 +154,10 @@ img 8
 
 
 -----------------------------------------
-### Connect Shuffler (SOAR)
+### Connect Shuffle (SOAR)
 -----------------------------------------
 
-Shuffler
+Shuffle
 
 Send alert to TheHive
 
