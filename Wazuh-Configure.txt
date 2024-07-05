@@ -1,0 +1,21 @@
+Log into Wazuh using admin credentials during it's install
+
+Open browser and login
+https://[Wazuh public IP]
+
+From the homepage, click 'Add agent'
+Platform: Windows
+Assign a server address: [Wazuh public IP]
+Copy the Run command
+
+Spin up the windows 10 VM
+Open PowerShell as admin
+Paste the Run command and press Enter
+net start wazuhsvc
+
+Return to Wazuh web portal
+Confirm agent is listed
+
+
+
+
