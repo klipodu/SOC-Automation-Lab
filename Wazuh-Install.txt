@@ -1,14 +1,12 @@
-Create Digital Ocean to create scalable virtual machines
+Create account and sign into:
 https://cloud.digitalocean.com/login
-Fee trial account for 60 days
 
 Create Droplet: 
-Basic Plan
-OS: Ubuntu 22.04 (LTS) x64
-Intel SSD
+OS: Ubuntu 22.04 LTS
+Intel 
 RAM: 8Gb +
 SSD: 50GB +
-Hostname: Wazuh
+Host: Wazuh
 Use password manager to save host credentials
 
 SSH into Wazuh using Putty or Powershell 
@@ -19,3 +17,14 @@ After installation, save the admin credentials in password manager
 Connect to Wazuh Dashboard
 Use public IP assigned to Wazuh
 BitWarden Crednentials
+
+Add Agent Steps
+1. System: Windows
+2. Server address: Wazuh pulic IP
+3. Skip
+4. Copy the command
+
+Open PowerShell as admin
+Paste command from step 4 above
+After complete, run command NET START WazuhSvc
+Return to dashboard and confirm agent
