@@ -110,3 +110,47 @@ This hands-on experience teaches how to setup a SOC envrionment using Wazuh, Shu
 ### Genereate Telemetry & Ingest into Wazuh
 -----------------------------------------
 
+[Telemetry and Ingest](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry.txt)
+
+img 1
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Sysmon.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Sysmon.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 2
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Ossec.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Ossec.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 3
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Events-Sysmon.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Events-Sysmon.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 4
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Mimikatz.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Mimikatz.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 5
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Filebeats.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Filebeats.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 6
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Mimikatz.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Mimikatz.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 7
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rule.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rulez.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+img 8
+<a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Custom-Rule-Triggerz.png?raw=true">
+    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry-Wazuh-Telemetry-Custom-Rule-Trigger.png?raw=true" alt="Image Alt" width="200" height="100">
+</a>
+
+
+
