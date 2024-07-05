@@ -1,0 +1,63 @@
+##########################################################
+# Shuffle 
+# Open Source SOAR - it's free
+##########################################################
+
+Create a shuffle account
+https://shuffler.io/
+
+From the top-left, click 'Workflows'
+Name: SOC Automation Project
+Enter a description or leave blank
+Usecases: select anything
+Click Done
+
+{Shuffle-Webhook}
+In the left pane, click 'Triggers' at the bottom
+Select 'Webhook' then drag/drop onto right pane
+Click the Webhook to open it's properties on right-pane
+Name: Wazuh-Alerts
+Parameters - copy it - this will be added into the Wazuh Manager
+
+{Shuffle-ChangeMe}
+Click the 'Change Me' icon
+Find Actions: Repeat back to me
+Call: $exec (click the plus button, then Execution Argument)
+
+# SSH into Wazuh
+nano /var/ossec/etc/ossec.conf
+
+{Shuffle--Webhook-URL}
+# Scroll below the <global> tag
+# Paste the <integration> tag
+# <integration> tag is found in Wazuh documentation
+# https://documentation.wazuh.com/
+# Leave a space after the shuffle URL to the tag ends properly
+# The <level> is replaced with <rule_id>
+# Rule_ID was the custom rule created in Wazuh web
+
+ <integration>
+    <name>shuffle</name>
+    <hook_url><YOUR_SHUFFLE_URL> </hook_url>
+    <rule_id>100002</rule_id>
+    <alert_format>json</alert_format>
+  </integration>
+
+#To Save
+ctrl + x to Exit
+ctrl + y for Yes
+Enter to save
+
+# Whenever you update a config file, restart the service
+systemctl restart wazuh-manager
+
+
+
+
+
+
+
+
+
+
+
