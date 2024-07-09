@@ -6,12 +6,12 @@ I was inspired by myDFIR found [here](https://www.youtube.com/watch?v=XR3eamn8yd
 
 ### Skills Learned
 
-- Home lab using virtualization
-- Incident Response Training
-- Case management and reporting
-- Automation
-- Integration Testing
-- Threat Intelligence Enrichment
+- Security Monitoring and Threat Detection
+- Incident Response
+- Security Automation and Orchestration (SOAR)
+- Linux Administration
+- Understanding of Security Concepts
+- Open-Source Technologies
   
 ### Tools Used
 
@@ -25,50 +25,46 @@ I was inspired by myDFIR found [here](https://www.youtube.com/watch?v=XR3eamn8yd
 <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/SOC-Automation-Project-Wrokflow.png?raw=true" alt="Image Alt">
 
 -----------------------------------------
-### Install the components to set up in the cloud
-- Windows 10 w/Sysmon
-- Wazuh Server
-- TheHive Server
+### Technical Skills
 -----------------------------------------
 
-- [Windows 10 w/Sysmon](https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Install.txt)
+**SIEM & Log Management:** Wazuh provided hands-on experience with Security Information and Event Management (SIEM) tools. <br>
+I learned to collect logs, configure alerts, and analyze security events.
+<br><br>
 
-  After downloading VirtualBox, check the hash using PowerShell <br>
-  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Hash-Check.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Hash-Check.png?raw=true" alt="Image Alt" width="200" height="100">
-  </a>
+**Security Monitoring & Threat Detection:** Through Wazuh, I gained proficiency in identifying suspicious activity and potential threats by analyzing logs and understanding security rules.
+<br><br>
 
+**Sysmon Configuration & Endpoint Security:** Sysmon exposed me to endpoint security concepts and the configuration of a popular endpoint monitoring tool.<br>
+This allowed me to understand how detailed system activity is captured for threat detection.
+<br>
 
-  VitrualBox is now setup <br>
-  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10.png?raw=true" alt="Image Alt" width="200" height="100">
-  </a>
+**Linux Administration:** Setting up these tools often involved working with a Linux environment.<br>
+I gained experience with package management, system configuration, and basic troubleshooting on Linux.
+<br><br>
 
-- [Wazuh Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Install.txt)
+**Security Automation (SOAR):** Shuffle introduced me to Security Orchestration, Automation, and Response (SOAR) tools.<br>
+I learned to automate tasks like enriching alerts and creating incident cases.
 
-  SSH into Wazuh Server<br>
-  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-SSH.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-SSH.png?raw=true" alt="Image Alt" width="200" height="100">
-  </a>   
+-----------------------------------------
+### Analytical Skills
+-----------------------------------------
 
-  Wazuh Homepage<br>
-  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard-Home.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Dashboard-Home.png?raw=true" alt="Image Alt" width="200" height="100">
-  </a>
+**Incident Response:** TheHive taught me the incident response process, including investigating alerts, collecting evidence, containing threats, and taking remediation steps.
+<br><br>
 
-  
-- [TheHive Server](https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Install.txt)
+**Workflow Optimization:** Integrating Shuffle with Wazuh and TheHive allowed me to understand how to automate incident response workflows, improving efficiency in handling security incidents.
+<br><br>
 
-   SSH into TheHive<br>
-  <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-SSH.png?raw=true">
-    <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-SSH.png?raw=true" alt="Image Alt" width="200" height="100">
-  </a>
+**Problem-Solving & Critical Thinking:** Troubleshooting alerts, identifying root causes of security incidents, and taking corrective actions honed my problem-solving and critical thinking skills.
+<br><br>
+
 
 -----------------------------------------
 ### Configure the servers and endpoints to communicate to each other
 -----------------------------------------
 
-[TheHive](https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure.txt)
+[TheHive]
 
 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Cassandra.png?raw=true">
     <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/TheHive-Configure-Cassandra.png?raw=true" alt="Image Alt" width="200" height="100">
@@ -87,7 +83,7 @@ I was inspired by myDFIR found [here](https://www.youtube.com/watch?v=XR3eamn8yd
 </a>
 
 
-[Wazuh](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Configure.txt)
+[Wazuh]
 
 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Configure-Login.png?raw=true">
     <img src="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Configure-Login.png?raw=true" alt="Image Alt" width="200" height="100">
@@ -111,7 +107,7 @@ I was inspired by myDFIR found [here](https://www.youtube.com/watch?v=XR3eamn8yd
 ### Genereate Telemetry & Ingest into Wazuh
 -----------------------------------------
 
-[Telemetry and Ingest](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Wazuh-Telemetry.txt)
+[Telemetry and Ingest]
 
 <div style="display: flex; justify-content: space-around;">
     4.1 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/VirtualBox-Windows10-Sysmon.png?raw=true">
@@ -148,7 +144,7 @@ I was inspired by myDFIR found [here](https://www.youtube.com/watch?v=XR3eamn8yd
 ### Connect Shuffle (SOAR)
 -----------------------------------------
 
-[Shuffle](https://github.com/klipodu/SOC-Automation-Lab/blob/main/Shuffle-Configure.txt)
+[Shuffle]
 
 <div style="display: flex; justify-content: space-around;">
     5.1 <a href="https://github.com/klipodu/SOC-Automation-Lab/blob/main/Shuffle-Webhook.png?raw=true">
